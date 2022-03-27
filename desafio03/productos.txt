@@ -1,0 +1,20 @@
+[
+ {
+   "nombre": "PlayStation 5",
+   "precio": 199990,
+   "imagen": "https://gorilagames.com/img/Public/1019-producto-ps5-estandar-preventa-argentina-gorila-games-4-903.jpg",
+   "id": 1
+ },
+ {
+   "nombre": "Control Inalámbrico DualSense PS5",
+   "price": 15499,
+   "thumbnail": "https://gorilagames.com/img/Public/1019-producto-dualsense-ps5-7234.jpg",
+   "id": 2
+ },
+ {
+   "nombre": "Auricular Inalámbrico Pulse 3D PS5",
+   "price": 17990,
+   "thumbnail": "https://gorilagames.com/img/Public/1019-producto-pulse-3d-ps5-4-1669.jpg",
+   "id": 3
+ }
+]
