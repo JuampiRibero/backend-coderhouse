@@ -9,7 +9,7 @@ const productos = new Contenedor('productos.txt');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('<h1 style="color: blue">Bienvenidos servidor express</h1>');
+    res.send('<h1 style="color: blue">Bienvenidos al Servidor Express</h1>');
 });
 
 app.get('/productos', async (req, res) => {
@@ -22,7 +22,7 @@ app.get('/productoRandom', async (req, res) => {
     res.send(await productos.obtenerPorId(parseInt(numeroRandom + 1)));
 });
 
-const PORT = 81;
+const PORT = 8080;
 
 const server = app.listen(PORT, () => {
     console.log(`Servidor http escuchando en el puerto: ${PORT}`);
