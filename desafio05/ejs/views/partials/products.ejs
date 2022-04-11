@@ -2,7 +2,7 @@
     <h1 class='text-center text-decoration-underline fst-italic'>Vista de Productos</h1>
 </header>
 
-{{#if products}}
+<% if(products.length > 0) { %>
     <div class='table-responsive'>
         <table class='table table-dark table-hover container'>
             <thead>
@@ -14,19 +14,19 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each products}}
+                <% products.forEach(item => { %>
                     <tr>
-                        <th>{{this.id}}</th>
-                        <th>{{this.title}}</th>
-                        <th>{{this.price}}</th>
-                        <th><img width='40' height='40' src={{this.thumbnail}} /></th>
+                        <th><%= item.id %></th>
+                        <th><%= item.title %></th>
+                        <th><%= item.price %></th>
+                        <th><img width="40" height="40" src="<%=item.thumbnail %>" alt="image" /></th>
                     </tr>
-                {{/each}}
+                <% }) %>
             </tbody>
         </table>
         <a href='/api' class='btn btn-primary'>Ir al Formulario</a>
     </div>
-{{else}}
+<% } else { %>
     <h3 class='alert alert-danger'>No se encontraron productos</h3>
     <a href='/api' class='btn btn-primary'>Ir al Formulario</a>
-{{/if}}
+<% } %>
