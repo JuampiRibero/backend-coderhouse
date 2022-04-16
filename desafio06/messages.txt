@@ -1,0 +1,12 @@
+[
+  {
+    "email": "juampiribero@gmail.com",
+    "date": "16/4/2022, 19:01:48",
+    "message": "Hola! Acabo de agregar una PS5 al listado!"
+  },
+  {
+    "email": "angiribero_hdo@hotmail.com",
+    "date": "16/4/2022, 19:02:38",
+    "message": "Buenas! Agregué unos auriculares al listado!"
+  }
+]
