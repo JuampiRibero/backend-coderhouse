@@ -1,7 +1,7 @@
 {
   "name": "primera-entrega",
   "version": "1.0.0",
-  "description": "",
+  "description": "- GET: '/'  \r Lista todos los productos disponibles (disponible para usuarios y administradores).",
   "main": "server.js",
   "type": "module",
   "scripts": {
