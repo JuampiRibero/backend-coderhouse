@@ -1,7 +1,0 @@
-[
-  {
-    "email": "juampiribero@gmail.com",
-    "date": "16/4/2022, 18:48:51",
-    "message": "Hola! Acabo de comprar una PS5"
-  }
-]
