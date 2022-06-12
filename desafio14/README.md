@@ -6,7 +6,7 @@
 2. En la terminal, parado en la raíz del proyecto, corré el comando.
 
 ```
-npm start ó npm start -p <número de puerto>
+npm start
 ```
 
 ó
