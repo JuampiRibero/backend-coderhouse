@@ -15,7 +15,7 @@ npm i
 npm i pm2 -g
 ```
 
-5. Luego en el archivo _commands.md_, que se encutra en _desafio15/docs_, vas a encontrar los comandos a ejecutar via terminal para correr la app.
+5. Luego en el archivo _commands.md_, que se encuentra en _desafio15/docs_, vas a encontrar los comandos a ejecutar via terminal para correr la app.
 
 ## Rutas
 
