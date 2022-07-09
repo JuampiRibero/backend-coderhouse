@@ -15,7 +15,7 @@
     "normalizr": "^3.6.1",
     "socket.io": "^4.4.0"
   },
-  "name": "desafio15",
+  "name": "desafio17",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
