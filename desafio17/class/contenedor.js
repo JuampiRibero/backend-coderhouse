@@ -1,5 +1,4 @@
 const fs = require("fs");
-const logger = require('../utils/logger');
 
 class Contenedor {
   constructor(name) {
@@ -17,7 +16,7 @@ class Contenedor {
         if (element.id > this.countID) this.countID = element.id;
       }
     } catch (error) {
-      logger.error("Aún no hay archivo");
+      console.log("Aún no hay archivo");
     }
   }
 

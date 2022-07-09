@@ -6,8 +6,7 @@ const { Server: HttpServer } = require("http");
 const { Server: IOServer } = require("socket.io");
 const path = require("path");
 const routes = require("./routers/index.js");
-const { minimistObject } = require("./utils/minimisObject");
-const logger = require('./utils/logger');
+const { minimistObject } = require("./utils/minimisObject")
 
 const app = express();
 const httpServer = new HttpServer(app);
@@ -79,13 +78,11 @@ app.use(function (err, req, res, next) {
   res.status(500).send("Ocurrio un error: " + err);
 });
 
-// SERVIDOR
-const PORT = parseInt(process.argv[2]) || 8080;
+// SERVIDOR - MINIMIST
+const PORT = minimistObject.port;
 
 httpServer.listen(PORT, () => {
-  logger.info(`Servidor http escuchando en el puerto ${httpServer.address().port} || Worker ${process.pid} started! - http://localhost:${PORT}`);
+  console.log(
+    `Servidor http escuchando en el puerto ${httpServer.address().port}`
+  );
 });
-
-httpServer.on("error", (error) =>
-  logger.error(`Error en servidor ${error}`)
-);

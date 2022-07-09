@@ -1,6 +1,5 @@
 const fs = require("fs");
 const { normalizeAndDenormalize } = require("../utils/normalizr");
-const logger = require('../utils/logger');
 
 class ApiChat {
   async writeChatToFile(message) {
@@ -12,7 +11,7 @@ class ApiChat {
         JSON.stringify(messagesNormalized)
       );
     } catch (err) {
-      logger.error("No se pudo escribir el archivo " + err);
+      console.log("No se pudo escribir el archivo " + err);
     }
   }
 
@@ -28,7 +27,7 @@ class ApiChat {
 
       return messagesDenormalized;
     } catch (err) {
-      logger.error("No se pudo leer el archivo " + err);
+      console.log("no se pudo leer el archivo " + err);
     }
   }
 }
