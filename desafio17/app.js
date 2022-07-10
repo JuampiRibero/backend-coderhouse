@@ -6,7 +6,10 @@ const { Server: HttpServer } = require("http");
 const { Server: IOServer } = require("socket.io");
 const path = require("path");
 const routes = require("./routers/index.js");
-const { minimistObject } = require("./utils/minimisObject")
+const { minimistObject } = require("./utils/minimisObject");
+const logger = require('./utils/logger');
+const cluster = require('cluster');
+const os = require("os");
 
 const app = express();
 const httpServer = new HttpServer(app);
@@ -78,11 +81,29 @@ app.use(function (err, req, res, next) {
   res.status(500).send("Ocurrio un error: " + err);
 });
 
-// SERVIDOR - MINIMIST
-const PORT = minimistObject.port;
+// SERVIDOR
+const PORT = process.env.PORT || 3000;
+const modoCluster = process.argv[2] == "CLUSTER";
+console.log(modoCluster);
 
-httpServer.listen(PORT, () => {
-  console.log(
-    `Servidor http escuchando en el puerto ${httpServer.address().port}`
+if (modoCluster && cluster.isPrimary) {
+  const numCPUs = os.cpus().length;
+  logger.info(`Master process PID: ${process.pid}`);
+
+  logger.info(`Iniciando ${numCPUs} workers...`);
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+
+  cluster.on("exit", worker => {
+    logger.info(`El subproceso ${worker.process.pid} terminó. Reiniciando...`);
+    cluster.fork();
+  });
+} else {
+  httpServer.listen(PORT, () => {
+    logger.info(`Servidor http escuchando en el puerto ${httpServer.address().port} || Worker ${process.pid} started! - http://localhost:${PORT}`);
+  });
+  httpServer.on("error", (error) =>
+    logger.error(`Error en servidor ${error}`)
   );
-});
+}

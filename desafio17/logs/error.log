@@ -1,0 +1,1 @@
+[2022-07-03T16:01:06.455] [ERROR] default - No se pudo leer el archivo Error: ENOENT: no such file or directory, open 'C:\Users\Juampi\Documents\Juampi\Cursos\Carrera Desarrollo Full Stack\Curso BackEnd\backend-coderhouse\desafio16\data\chat.json'
